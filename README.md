@@ -1,16 +1,3 @@
-# vue
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates.
-
-However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 
 ## Customize configuration
 
@@ -21,15 +8,34 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ```sh
 npm install
 ```
+**Start the Vue frontend server:**
 
-### Compile and Hot-Reload for Development
+   ```sh
+   cd Frontend
+   npm run dev
+   ```
+Open your browser and navigate to `http://localhost:5174` to view the application.
 
-```sh
-npm run dev
-```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
 npm run build
 ```
+
+
+## Connecting Frontend to Backend
+
+The frontend is connected to the Django backend via a token-based API. Ensure that the backend server is running before starting the frontend server.
+
+
+### **Demo Credentials as provided in the default sqlite db**
+Use the following credentials to access the application:
+
+- **Email:** `admin@admin.com`
+- **Password:** `password`
+
+---
+
+
+
