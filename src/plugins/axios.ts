@@ -49,18 +49,18 @@ axiosIns.interceptors.response.use(
   },
   async error => {
     const originalRequest = error.config
-    if (error?.response?.status === 401) {
-      if (!originalRequest._retry && localStorage.getItem('refreshToken')) {
-        originalRequest._retry = true
-        await refreshToken()
-
-        return axiosIns(originalRequest)
-      }
-      else {
-        ['accessToken', 'refreshToken', 'userData', 'userAbilities'].map(item => localStorage.removeItem(item))
-        window.location.reload()
-      }
-    }
+    // if (error?.response?.status === 401) {
+    //   if (!originalRequest._retry && localStorage.getItem('refreshToken')) {
+    //     originalRequest._retry = true
+    //     await refreshToken()
+    //
+    //     return axiosIns(originalRequest)
+    //   }
+    //   else {
+    //     ['accessToken', 'refreshToken', 'userData', 'userAbilities'].map(item => localStorage.removeItem(item))
+    //     window.location.reload()
+    //   }
+    // }
 
     return Promise.reject(error)
   },
